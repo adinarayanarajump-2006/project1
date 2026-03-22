@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /c/Users/adina/project1 && if ! git diff --quiet || ! git diff --cached --quiet || [ -n \"$(git ls-files --others --exclude-standard)\" ]; then git add -A && git commit -m \"auto: save changes $(git diff --cached --name-only | head -5 | tr '\\n' ' ')\" && git push origin main; fi 2>/dev/null || true",
+            "statusMessage": "Saving and pushing to GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
